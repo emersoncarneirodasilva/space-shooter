@@ -1,6 +1,6 @@
 const yourShip = document.querySelector(".player-shooter")
 const playArea = document.querySelector("#main-play-area")
-const aliensImg = ["../space-shooter/assets/imgs/monster-1.png", "../space-shooter/assets/imgs/monster-2.png", "../space-shooter/assets/imgs/monster-3.png"];
+const aliensImg = ["../assets/imgs/monster-1.png", "../assets/imgs/monster-2.png", "../assets/imgs/monster-3.png"];
 const instructionsText = document.querySelector(".game-instructions");
 const startButton = document.querySelector(".start-button");
 const gameOverButton =  document.querySelector(".game-over");
@@ -56,7 +56,7 @@ function createLaserElement() {
     let xPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue("left"))
     let yPosition = parseInt(window.getComputedStyle(yourShip).getPropertyValue("top"))
     let newLaser = document.createElement("img")
-    newLaser.src = "../space-shooter/assets/imgs/shoot.png"
+    newLaser.src = "../assets/imgs/shoot.png"
     newLaser.classList.add("laser")
     newLaser.style.left = `${xPosition}px`
     newLaser.style.top = `${yPosition - 10}px`
@@ -70,7 +70,7 @@ function moveLaser(laser) {
 
         aliens.forEach((alien) => {                // Comparando se cada alien foi atingido, se sim, troca o src da imagem
             if (checkLaserCollision(laser, alien)) {
-                alien.src = "../space-shooter/assets/imgs/explosion.png";
+                alien.src = "../assets/imgs/explosion.png";
                 alien.classList.remove("alien");
                 alien.classList.add("dead-alien");
             }
